@@ -22,9 +22,14 @@ const requestPathname = Astro.url.pathname;
         <nav class="nav" aria-label="Navigation">
             {
                 Object.values(pages).map((entry) => {
-                    const className = requestPathname === entry.url && "active";
+                    const className =
+                        requestPathname === entry.url ? "active" : "";
                     return (
-                        <a rel="prefetch" class={className} href={entry.url}>
+                        <a
+                            rel="prefetch"
+                            class={`test ${className}`}
+                            href={entry.url}
+                        >
                             {entry.title}
                         </a>
                     );
