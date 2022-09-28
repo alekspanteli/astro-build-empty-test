@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "sass": "^1.55.0"
+  },
+  "dependencies": {
+    "@astrojs/prefetch": "^0.0.7"
   }
 }
