@@ -1,5 +1,6 @@
 ---
 import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <html lang="en">
@@ -10,9 +11,9 @@ import Navbar from "../components/Navbar.astro";
     </head>
     <body>
         <Navbar />
-        <article>
+        <main>
             <slot />
-            <!-- your content is injected here -->
-        </article>
+        </main>
+        <Footer />
     </body>
 </html>
