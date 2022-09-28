@@ -1,5 +1,20 @@
-<nav>
-    <a href="/" rel="prefetch">Home</a>
-    <a href="/about/" rel="prefetch">About</a>
-    <a href="/contact/" rel="prefetch">Contact</a>
+---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // remove the first "/"
+---
+
+<nav class="nav">
+    <a class={currentPath === "" ? "active" : ""} rel="prefetch" href="/"
+        >Home</a
+    >
+    <a
+        class={currentPath === "about" ? "active" : ""}
+        rel="prefetch"
+        href="/about">About</a
+    >
+    <a
+        class={currentPath === "contact" ? "active" : ""}
+        rel="prefetch"
+        href="/contact">Contact</a
+    >
 </nav>
