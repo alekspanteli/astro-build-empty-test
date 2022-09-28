@@ -23,11 +23,13 @@ const requestPathname = Astro.url.pathname;
             {
                 Object.values(pages).map((entry) => {
                     const className =
-                        requestPathname === entry.url ? "active" : "";
+                        requestPathname === entry.url
+                            ? "nav__item--active"
+                            : "";
                     return (
                         <a
                             rel="prefetch"
-                            class={`test ${className}`}
+                            class={`nav__item ${className}`}
                             href={entry.url}
                         >
                             {entry.title}

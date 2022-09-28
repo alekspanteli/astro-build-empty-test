@@ -8,11 +8,13 @@ header{
 }
 
 .nav{
-    > a{
-        color:black;
-        &.active{
+    display:flex;
+    gap:1rem;
+    &__item{
+         color:black;
+         &--active{
             color:red;
-        }
+         }
     }
 }
 
