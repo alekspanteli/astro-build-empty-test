@@ -16,15 +16,20 @@ const pages = {
 const requestPathname = Astro.url.pathname;
 ---
 
-<nav class="nav" aria-label="Navigation">
-    {
-        Object.values(pages).map((entry) => {
-            const className = requestPathname === entry.url && "active";
-            return (
-                <a class={className} href={entry.url}>
-                    {entry.title}
-                </a>
-            );
-        })
-    }
-</nav>
+<div class="container">
+    <div class="flex justify-between gap-1">
+        <a href="/">Logo</a>
+        <nav class="nav" aria-label="Navigation">
+            {
+                Object.values(pages).map((entry) => {
+                    const className = requestPathname === entry.url && "active";
+                    return (
+                        <a rel="prefetch" class={className} href={entry.url}>
+                            {entry.title}
+                        </a>
+                    );
+                })
+            }
+        </nav>
+    </div>
+</div>
