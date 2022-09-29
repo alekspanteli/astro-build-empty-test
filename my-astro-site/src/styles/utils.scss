@@ -1,0 +1,11 @@
+.flex{
+    display:flex;
+}
+
+.justify-between{
+    justify-content: space-between;
+}
+
+.gap-1{
+    gap: var(--gap, 1rem)
+}

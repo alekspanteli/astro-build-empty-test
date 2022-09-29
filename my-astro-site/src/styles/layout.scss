@@ -1,0 +1,24 @@
+.container{
+    width: min(60rem, 100vw - 30px);
+    margin-inline:auto;
+}
+
+header{
+    background:#e3e3e3;
+}
+
+.nav{
+    display:flex;
+    gap:1rem;
+    &__item{
+         color:black;
+         &--active{
+            color:red;
+         }
+    }
+}
+
+body{
+    display:grid;
+    grid-template-rows: auto 1fr auto;
+}

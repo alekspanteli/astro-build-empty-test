@@ -1,0 +1,42 @@
+---
+const pages = {
+    home: {
+        url: "/",
+        title: "Home",
+    },
+    about: {
+        url: "/about",
+        title: "About",
+    },
+    contact: {
+        url: "/contact",
+        title: "Contact",
+    },
+};
+const requestPathname = Astro.url.pathname;
+---
+
+<div class="container">
+    <div class="flex justify-between gap-1">
+        <a href="/">Logo</a>
+        <nav class="nav" aria-label="Navigation">
+            {
+                Object.values(pages).map((entry) => {
+                    const className =
+                        requestPathname === entry.url
+                            ? "nav__item--active"
+                            : "";
+                    return (
+                        <a
+                            rel="prefetch"
+                            class={`nav__item ${className}`}
+                            href={entry.url}
+                        >
+                            {entry.title}
+                        </a>
+                    );
+                })
+            }
+        </nav>
+    </div>
+</div>
